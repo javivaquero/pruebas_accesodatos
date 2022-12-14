@@ -138,6 +138,32 @@ public class MarcaDao extends ObjetoDao implements Dao<Marca> {
 		closeConnection();
 		return m;
 	}
+	
+	public Marca buscarPorNombre(String n) {
+		// TODO Auto-generated method stub
+		connection = openConnection();
+		Marca m= null;
+		
+		String query = "select * from marca where nombre = ?";
+		
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.setString(1, n);
+			ResultSet r = ps.executeQuery();
+			
+			while (r.next()) {
+				m=new Marca(
+						r.getInt("id"),
+						r.getString("nombre"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		closeConnection();
+		return m;
+	}
 
 	
 	

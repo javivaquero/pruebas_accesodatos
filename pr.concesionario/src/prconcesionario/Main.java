@@ -57,7 +57,8 @@ public class Main {
 		System.out.println(md.buscarPorId(1));
 		System.out.println(cd.buscarPorId(1));
 		
-		
+		//BUSCAR POR NOMBRE
+		System.out.println(md.buscarPorNombre("Honda"));
 		
 	}
 
