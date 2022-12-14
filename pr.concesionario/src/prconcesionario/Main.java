@@ -11,6 +11,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		MarcaDao md = new MarcaDao();
+		CocheDao cd = new CocheDao();
+		
+		cd.borrarTodo();
+		md.borrarTodo();
+		
 		Marca m = new Marca("Opel");
 		Marca ma = new Marca("Honda");
 		Marca mb = new Marca("Toyota");
@@ -20,8 +26,7 @@ public class Main {
 		Coche cb = new Coche("Civic",192,1998,5,2);
 		Coche cc = new Coche("Supra",320,1998,5,3);
 		Coche cde = new Coche(5,"A3",105,2001,5,4);
-		MarcaDao md = new MarcaDao();
-		CocheDao cd = new CocheDao();
+		
 		
 		//INSERTAR
 		md.insertar(m);

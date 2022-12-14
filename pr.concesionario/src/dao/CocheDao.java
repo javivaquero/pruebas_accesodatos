@@ -113,6 +113,19 @@ public class CocheDao extends ObjetoDao implements Dao<Coche> {
 		
 	}
 
+	public void borrarTodo() {
+		connection = openConnection();
+		
+		String query ="delete from coche";
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public Coche buscarPorId(int id) {
 		// TODO Auto-generated method stub

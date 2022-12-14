@@ -54,7 +54,20 @@ public class MarcaDao extends ObjetoDao implements Dao<Marca> {
 		}
 		closeConnection();
 	}
-
+	
+	public void borrarTodo() {
+		connection = openConnection();
+		
+		String query ="delete from marca";
+		try {
+			PreparedStatement ps = connection.prepareStatement(query);
+			ps.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public void borrar(Marca marca) {
 		// TODO Auto-generated method stub
